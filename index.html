@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Blog </title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1> LCCastillo </h1>
+            </div>""
+            <ul class="nav-list">
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Work </a></li>
+                <li><a href="#"> Blog </a></li>
+                <li><a href="#"> Contact </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+        </div>
+
+        <main>
+            <h2>Javascript Concepts</h2>
+            <div class="profile-container">
+                <div class="profile">
+                    <div class="img-container">
+
+                    </div>
+                    <div class="text">
+                        <h3>LCCastillo</h3>
+                        <p> September 06, 2024</p>
+                    </div>
+                </div>
+                <div class="button">
+                    <a href="#" class="btn"> Education</a>
+                </div>
+            </div>
+            <div class="content">
+                <h2>JavaScript Async</h2>
+                <p>
+                    Asynchronous JavaScript is a programming approach that allows your code to handle multiple tasks
+                    simultaneously without stopping. For instance, if you're at a restaurant and order a pizza, instead
+                    of waiting idly for the pizza to cook, you can read a book or chat with friends. Similarly, in
+                    JavaScript, when the code needs to wait for something, like downloading data from the internet, it
+                    doesn't halt the execution of other code. Instead, it continues running other parts of the program
+                    while it waits for the task to complete.
+                </p>
+
+                <p>
+                    One common way to manage asynchronous behavior in JavaScript is by using <code>setTimeout</code>.
+                    This function allows you to schedule a task to run after a specified delay, letting the rest of the
+                    code continue executing in the meantime. The syntax for <code>setTimeout</code> is:
+                </p>
+
+                <pre><code>setTimeout(function, milliseconds);</code></pre>
+
+                <p>Here are the parameters:</p>
+                <ul>
+                    <li><strong>function</strong>: A function that contains the code you want to execute after the
+                        delay.</li>
+                    <li><strong>milliseconds</strong>: The time, in milliseconds, that <code>setTimeout</code> should
+                        wait before executing the function.</li>
+                </ul>
+
+                <p>For example, consider the following code:</p>
+
+                <pre><code>
+                console.log("asynchronous.");
+                setTimeout(() => console.log("asynchronous javascript!"), 3000);
+                console.log("asynchronous again!");
+                </code></pre>
+
+                <p>In this code:</p>
+                <ul>
+                    <li><strong>asynchronous</strong> is logged immediately.</li>
+                    <li><code>setTimeout</code> schedules the function
+                        <code>() => console.log("asynchronous javascript!")</code> to run after 3 seconds (3000
+                        milliseconds).</li>
+                    <li><strong>asynchronous again!</strong> is logged immediately after the first log.</li>
+                </ul>
+
+                <p>The output will be:</p>
+
+                <pre><code>
+                asynchronous.
+                asynchronous again!
+                asynchronous javascript!
+                </code></pre>
+
+                <p>This illustrates how <code>setTimeout</code> allows JavaScript to continue executing other code while
+                    it waits for the specified delay before running the scheduled function.</p>
+
+                <h3>Callbacks in JavaScript</h3>
+                <p>
+                    In JavaScript, functions are first-class citizens, meaning you can pass functions as arguments to
+                    other functions. A callback is a function you pass to another function that gets executed after the
+                    main function finishes. It allows you to run code after some action is complete.
+                </p>
+
+                <p>For example:</p>
+
+                <pre><code>
+                function incrementDigits(callback) {
+                    callback();
+                }
+                </code></pre>
+
+                <p>Here, <code>incrementDigits</code> takes a function (<code>callback</code>) as a parameter and runs
+                    it. This is a simple example of using callbacks.</p>
+
+                <p>Callbacks are commonly used for asynchronous tasks like waiting for a user to click a button or for
+                    data to load. For instance, <code>setTimeout</code> is often used with callbacks to delay execution:
+                </p>
+
+                <pre><code>
+                setTimeout(() => {
+                    console.log("output is initiated after 5 seconds");
+                }, 5000);
+                </code></pre>
+
+                <p>
+                    In this example, the arrow function is a callback that logs a message after a 5-second delay.
+                    Here's a more complex example with recursion and callbacks:
+                </p>
+
+                <pre><code>
+                function incrementDigits(num, callback) {
+                    setTimeout(function() {
+                        num++;
+                        console.log(num);
+                        if (num < 10) {
+                            incrementDigits(num, callback);
+                        } else {
+                            callback();
+                        }
+                    }, 1000);
+                }
+
+                incrementDigits(0, function() {
+                    console.log('done!');
+                });
+                </code></pre>
+
+                <p>
+                    This function increments a number every second until it reaches 10, then it runs the callback
+                    function, which prints "done!".
+                </p>
+
+
+                <h3>Promise in JavaScript</h3>
+                <p>
+                    A Promise in JavaScript is like a placeholder for a value that is not yet available but will be at
+                    some point in the future. It represents an operation that will eventually succeed or fail, allowing
+                    us to write asynchronous code that looks and behaves like synchronous code.
+                </p>
+
+                <h4><strong>1. Creating a Promise:</strong></h4>
+
+                <p>
+                    You create a promise using the <code>Promise</code> constructor, which takes a function called the
+                    executor function with two parameters: <code>resolve</code> and <code>reject</code>.
+                </p>
+
+                <ul>
+                    <li><strong>resolve</strong>: This is called when the asynchronous operation completes successfully.
+                    </li>
+                    <li><strong>reject</strong>: This is called if something goes wrong with the operation.</li>
+                </ul>
+
+                <pre><code>
+                let promise = new Promise(function(resolve, reject) {
+                    // Your asynchronous code here
+                });
+                </code></pre>
+
+                <h4><strong>2. Promise States:</strong></h4>
+                <p>A promise can be in one of three states:</p>
+                <ul>
+                    <li>Pending: The operation is still ongoing.</li>
+                    <li>Fulfilled: The operation completed successfully.</li>
+                    <li>Rejected: The operation failed.</li>
+                </ul>
+
+                <h4><strong>3. Handling Results:</strong></h4>
+                <p>After creating a promise, you can use the <code>.then()</code> method to handle the result:</p>
+
+                <pre><code>
+                promise.then(function(result) {
+                    // Code to run if the promise is resolved
+                }, function(error) {
+                    // Code to run if the promise is rejected
+                });
+                </code></pre>
+
+                <ul>
+                    <li>The first function in <code>.then()</code> runs if the promise is resolved (success).</li>
+                    <li>The second function runs if the promise is rejected (error).</li>
+                </ul>
+
+                <p>Here’s a simple example of a promise that simulates a delayed operation:</p>
+
+                <pre><code>
+                let promise = new Promise(function(resolve, reject) {
+                    setTimeout(() => {
+                        // Simulating an operation that succeeds
+                        resolve("Operation successful!");
+                    }, 2000); // Delays for 2 seconds
+                });
+
+                promise.then(function(successMessage) {
+                    console.log(successMessage); // Logs "Operation successful!" after 2 seconds
+                }, function(errorMessage) {
+                    console.log(errorMessage); // Logs if something went wrong
+                });
+                </code></pre>
+
+                <p>In this example:</p>
+                <ul>
+                    <li>The <code>setTimeout</code> function simulates an asynchronous operation that takes 2 seconds to
+                        complete.</li>
+                    <li>After 2 seconds, the <code>resolve</code> function is called with a success message.</li>
+                    <li>The <code>.then()</code> method logs the success message to the console.</li>
+                </ul>
+
+                <p>By using promises, you can manage asynchronous operations more easily and handle successes and
+                    failures in a structured way.</p>
+
+                <h3>Async/Await in JavaScript</h3>
+
+                <p>
+                    Async/await is a feature in JavaScript that makes working with asynchronous code easier by allowing
+                    you to write it in a way that looks like synchronous (sequential) code. This means your code can
+                    handle tasks that take time (like fetching data or waiting for a response) without blocking the rest
+                    of your code.
+                </p>
+
+                <h4>1. Async Functions:</h4>
+                <p>
+                    To use async/await, you first need to define a function as <code>async</code>. This tells JavaScript
+                    that the function will perform asynchronous operations and return a promise.
+                </p>
+
+                <pre><code>
+                const myAsyncFunction = async () => {
+                    // Code here
+                };
+                </code></pre>
+
+                <h4>2. Await:</h4>
+                <p>
+                    Inside an async function, you can use the <code>await</code> keyword to pause the execution of the
+                    code until a promise is resolved. This makes it easier to work with the results of asynchronous
+                    operations.
+                </p>
+
+                <pre><code>
+                const result = await someAsyncOperation();
+                </code></pre>
+
+                <p>
+                    Here, <code>someAsyncOperation()</code> is a function that returns a promise. The code will wait
+                    until the promise is resolved before moving to the next line.
+                </p>
+
+                <h4>Example:</h4>
+                <p>Let’s look at a simple example using async/await:</p>
+
+                <pre><code>
+                const incrementDigits = async num => {
+                    num++;
+                    console.log(num);
+                    if (num < 10) {
+                        await incrementDigits(num);
+                    } else {
+                        return 'done!';
+                    }
+                };
+
+                (async () => {
+                    const res = await incrementDigits(0);
+                    console.log(res);
+                })();
+                </code></pre>
+
+                <p>In this example:</p>
+                <ul>
+                    <li>The <code>incrementDigits</code> function is defined as <code>async</code>, meaning it will
+                        handle asynchronous operations.</li>
+                    <li>Inside <code>incrementDigits</code>, <code>await</code> is used to pause the function until
+                        <code>incrementDigits(num)</code> completes.</li>
+                    <li>The <code>(async () => { ... })()</code> syntax is used to run the async function and log the
+                        result.</li>
+                </ul>
+
+                <h3>What is the Event Loop?</h3>
+                <p>
+                    The Event Loop is a mechanism in JavaScript that allows the language to perform tasks
+                    asynchronously, without blocking the execution of other code. It helps JavaScript manage multiple
+                    operations, like handling user inputs or waiting for data from a server, while keeping the program
+                    responsive.
+                </p>
+
+                <h4>Simple Explanation:</h4>
+                <ul>
+                    <li><strong>Call Stack</strong>: JavaScript uses a call stack to keep track of which functions are
+                        currently running. When a function is called, it gets added to the stack. When it finishes, it's
+                        removed from the stack.</li>
+                    <li><strong>Callback Queue</strong>: For tasks that take time (like waiting for a timer or a network
+                        request), JavaScript uses a callback queue. When these tasks are done, their callback functions
+                        are added to the queue.</li>
+                    <li><strong>Event Loop</strong>: The event loop checks if the call stack is empty. If it is, it
+                        moves the first function from the callback queue to the call stack for execution.</li>
+                </ul>
+
+                <h4>Example:</h4>
+                <p>Here’s a basic example to show how the event loop works:</p>
+
+                <pre><code>
+                console.log('Start');
+
+                setTimeout(() => {
+                    console.log('Timeout');
+                }, 1000);
+
+                console.log('End');
+                </code></pre>
+
+                <p><strong>What Happens:</strong></p>
+                <ol>
+                    <li>"Start" is logged immediately because it is executed right away.</li>
+                    <li><code>setTimeout</code> schedules a function to run after 1000 milliseconds, but it doesn’t stop
+                        the code from running next.</li>
+                    <li>"End" is logged immediately after "Start" because it follows <code>setTimeout</code>.</li>
+                    <li>After 1000 milliseconds, the event loop moves the <code>setTimeout</code> callback from the
+                        callback queue to the call stack, and "Timeout" is logged.</li>
+                </ol>
+
+
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
