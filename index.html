@@ -7,15 +7,15 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>My Blog </title>
+    <title> Velaris | JavaScript </title>
 </head>
 
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
-                <h1> LCCastillo </h1>
-            </div>""
+                <h1> Velaris </h1>
+            </div>
             <ul class="nav-list">
                 <li><a href="#"> Home</a></li>
                 <li><a href="#"> About</a></li>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="button">
-                    <a href="#" class="btn"> Education</a>
+                    <a class="btn"> Education</a>
                 </div>
             </div>
             <div class="content">
@@ -58,7 +58,7 @@
                 </p>
 
                 <p>
-                    One common way to manage asynchronous behavior in JavaScript is by using <code>setTimeout</code>.
+                    One common way to manage asynchronous behavior in JavaScript is by using <code id="mycode">setTimeout</code>.
                     This function allows you to schedule a task to run after a specified delay, letting the rest of the
                     code continue executing in the meantime. The syntax for <code>setTimeout</code> is:
                 </p>
@@ -67,15 +67,15 @@
 
                 <p>Here are the parameters:</p>
                 <ul>
-                    <li><strong>function</strong>: A function that contains the code you want to execute after the
+                    <li><strong>- function</strong>: A function that contains the code you want to execute after the
                         delay.</li>
-                    <li><strong>milliseconds</strong>: The time, in milliseconds, that <code>setTimeout</code> should
+                    <li><strong>- milliseconds</strong>: The time, in milliseconds, that <code>setTimeout</code> should
                         wait before executing the function.</li>
                 </ul>
 
                 <p>For example, consider the following code:</p>
 
-                <pre><code>
+                <pre><code class="language-javascript">
                 console.log("asynchronous.");
                 setTimeout(() => console.log("asynchronous javascript!"), 3000);
                 console.log("asynchronous again!");
@@ -83,11 +83,11 @@
 
                 <p>In this code:</p>
                 <ul>
-                    <li><strong>asynchronous</strong> is logged immediately.</li>
-                    <li><code>setTimeout</code> schedules the function
+                    <li>- <strong>asynchronous</strong> is logged immediately.</li>
+                    <li>- <code>setTimeout</code> schedules the function
                         <code>() => console.log("asynchronous javascript!")</code> to run after 3 seconds (3000
                         milliseconds).</li>
-                    <li><strong>asynchronous again!</strong> is logged immediately after the first log.</li>
+                    <li>- <strong>asynchronous again!</strong> is logged immediately after the first log.</li>
                 </ul>
 
                 <p>The output will be:</p>
@@ -101,7 +101,7 @@
                 <p>This illustrates how <code>setTimeout</code> allows JavaScript to continue executing other code while
                     it waits for the specified delay before running the scheduled function.</p>
 
-                <h3>Callbacks in JavaScript</h3>
+                <h2>Callbacks in JavaScript</h2>
                 <p>
                     In JavaScript, functions are first-class citizens, meaning you can pass functions as arguments to
                     other functions. A callback is a function you pass to another function that gets executed after the
@@ -158,7 +158,7 @@
                 </p>
 
 
-                <h3>Promise in JavaScript</h3>
+                <h2>Promise in JavaScript</h2>
                 <p>
                     A Promise in JavaScript is like a placeholder for a value that is not yet available but will be at
                     some point in the future. It represents an operation that will eventually succeed or fail, allowing
@@ -173,9 +173,9 @@
                 </p>
 
                 <ul>
-                    <li><strong>resolve</strong>: This is called when the asynchronous operation completes successfully.
+                    <li>- <strong>resolve</strong>: This is called when the asynchronous operation completes successfully.
                     </li>
-                    <li><strong>reject</strong>: This is called if something goes wrong with the operation.</li>
+                    <li>- <strong>reject</strong>: This is called if something goes wrong with the operation.</li>
                 </ul>
 
                 <pre><code>
@@ -186,11 +186,14 @@
 
                 <h4><strong>2. Promise States:</strong></h4>
                 <p>A promise can be in one of three states:</p>
+                
+                <p>
                 <ul>
-                    <li>Pending: The operation is still ongoing.</li>
-                    <li>Fulfilled: The operation completed successfully.</li>
-                    <li>Rejected: The operation failed.</li>
+                    <li>- <strong>Pending:</strong> The operation is still ongoing.</li>
+                    <li>- <strong>Fulfilled:</strong> The operation completed successfully.</li>
+                    <li>- <strong>Rejected: </strong> The operation failed.</li>
                 </ul>
+                </p>
 
                 <h4><strong>3. Handling Results:</strong></h4>
                 <p>After creating a promise, you can use the <code>.then()</code> method to handle the result:</p>
@@ -202,11 +205,12 @@
                     // Code to run if the promise is rejected
                 });
                 </code></pre>
-
+                <p>
                 <ul>
-                    <li>The first function in <code>.then()</code> runs if the promise is resolved (success).</li>
-                    <li>The second function runs if the promise is rejected (error).</li>
+                    <li>- The first function in <code>.then()</code> runs if the promise is resolved (success).</li>
+                    <li>- The second function runs if the promise is rejected (error).</li>
                 </ul>
+                </p>
 
                 <p>Here’s a simple example of a promise that simulates a delayed operation:</p>
 
@@ -227,16 +231,16 @@
 
                 <p>In this example:</p>
                 <ul>
-                    <li>The <code>setTimeout</code> function simulates an asynchronous operation that takes 2 seconds to
+                    <li>- The <code>setTimeout</code> function simulates an asynchronous operation that takes 2 seconds to
                         complete.</li>
-                    <li>After 2 seconds, the <code>resolve</code> function is called with a success message.</li>
-                    <li>The <code>.then()</code> method logs the success message to the console.</li>
+                    <li>- After 2 seconds, the <code>resolve</code> function is called with a success message.</li>
+                    <li>- The <code>.then()</code> method logs the success message to the console.</li>
                 </ul>
 
                 <p>By using promises, you can manage asynchronous operations more easily and handle successes and
                     failures in a structured way.</p>
 
-                <h3>Async/Await in JavaScript</h3>
+                <h2>Async/Await in JavaScript</h2>
 
                 <p>
                     Async/await is a feature in JavaScript that makes working with asynchronous code easier by allowing
@@ -295,15 +299,15 @@
 
                 <p>In this example:</p>
                 <ul>
-                    <li>The <code>incrementDigits</code> function is defined as <code>async</code>, meaning it will
+                    <li>- The <code>incrementDigits</code> function is defined as <code>async</code>, meaning it will
                         handle asynchronous operations.</li>
-                    <li>Inside <code>incrementDigits</code>, <code>await</code> is used to pause the function until
+                    <li>- Inside <code>incrementDigits</code>, <code>await</code> is used to pause the function until
                         <code>incrementDigits(num)</code> completes.</li>
-                    <li>The <code>(async () => { ... })()</code> syntax is used to run the async function and log the
+                    <li>- The <code>(async () => { ... })()</code> syntax is used to run the async function and log the
                         result.</li>
                 </ul>
 
-                <h3>What is the Event Loop?</h3>
+                <h2>Event Loop</h2>
                 <p>
                     The Event Loop is a mechanism in JavaScript that allows the language to perform tasks
                     asynchronously, without blocking the execution of other code. It helps JavaScript manage multiple
@@ -312,18 +316,21 @@
                 </p>
 
                 <h4>Simple Explanation:</h4>
+                <p>
                 <ul>
-                    <li><strong>Call Stack</strong>: JavaScript uses a call stack to keep track of which functions are
+                    <li>- <strong>Call Stack</strong>: JavaScript uses a call stack to keep track of which functions are
                         currently running. When a function is called, it gets added to the stack. When it finishes, it's
                         removed from the stack.</li>
-                    <li><strong>Callback Queue</strong>: For tasks that take time (like waiting for a timer or a network
+                    <li>- <strong>Callback Queue</strong>: For tasks that take time (like waiting for a timer or a network
                         request), JavaScript uses a callback queue. When these tasks are done, their callback functions
                         are added to the queue.</li>
-                    <li><strong>Event Loop</strong>: The event loop checks if the call stack is empty. If it is, it
+                    <li>- <strong>Event Loop</strong>: The event loop checks if the call stack is empty. If it is, it
                         moves the first function from the callback queue to the call stack for execution.</li>
                 </ul>
+                </p>
 
                 <h4>Example:</h4>
+
                 <p>Here’s a basic example to show how the event loop works:</p>
 
                 <pre><code>
@@ -337,17 +344,23 @@
                 </code></pre>
 
                 <p><strong>What Happens:</strong></p>
+               <p>
                 <ol>
-                    <li>"Start" is logged immediately because it is executed right away.</li>
-                    <li><code>setTimeout</code> schedules a function to run after 1000 milliseconds, but it doesn’t stop
+                    <li>- "Start" is logged immediately because it is executed right away.</li>
+                    <li>- <code>setTimeout</code> schedules a function to run after 1000 milliseconds, but it doesn’t stop
                         the code from running next.</li>
-                    <li>"End" is logged immediately after "Start" because it follows <code>setTimeout</code>.</li>
-                    <li>After 1000 milliseconds, the event loop moves the <code>setTimeout</code> callback from the
+                    <li>- "End" is logged immediately after "Start" because it follows <code>setTimeout</code>.</li>
+                    <li>- After 1000 milliseconds, the event loop moves the <code>setTimeout</code> callback from the
                         callback queue to the call stack, and "Timeout" is logged.</li>
                 </ol>
-
-
-
+              </p>
+            </div>
+            <div class="tags">
+                <p>tags:</p>
+                <a href="#">Education</a>
+                <a href="#">Javascript</a>
+                <a href="#">Code</a>
+                <a href="#">Examples</a>
             </div>
         </main>
     </div>
