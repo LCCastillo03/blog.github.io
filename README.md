@@ -1,7 +1,6 @@
-# blog.github.io
-Link: https://lccastillo03.github.io/blog.github.io/
-
 # Velaris Blog
+
+Link: https://lccastillo03.github.io/blog.github.io/
 
 Welcome to the Velaris Blog! This repository serves as a blog for exploring key asynchronous JavaScript concepts. The blog includes articles and examples on JavaScript Async, Callbacks, Promises, Async/Await, and the Event Loop. The repository is organized as follows:
 
