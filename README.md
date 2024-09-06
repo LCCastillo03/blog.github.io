@@ -44,6 +44,17 @@ To read the blog:
 
 Explore the articles to deepen your understanding of asynchronous JavaScript and enhance your coding skills.
 
+## Clone
+
+To view the website locally on your machine:
+
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in your browser to start browsing Velaris.
+
+```bash
+git clone <repository-URL>
+```
+
 ## Contributing
 
 If you have suggestions or would like to contribute to the Velaris Blog, please fork the repository and submit a pull request with your changes. For any questions, feel free to open an issue in the repository.
